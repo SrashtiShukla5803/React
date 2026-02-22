@@ -12,7 +12,7 @@ const Search = ({searchTerm, setSearchTerm})=>{
                 value = {searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 />
-            <div className='text-white text-3xl'>{searchTerm}</div>
+            {/* <div className='text-white text-3xl'>{searchTerm}</div> */}
             </div>
         </div>
     )
