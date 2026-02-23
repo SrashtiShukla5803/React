@@ -21,9 +21,9 @@ const App = () => {
   const [searchTerm, setSearchTerm] = useState('')
   const [errorMessage, setErrorMessage] = useState('');
   const[movieList, setMovieList] = useState([]);
+  const [trendingMovies,setTrendingMovies]=useState([]);
   const[isLoading, setIsLoading] = useState(false);
   const [debouncedSearchTerm, setDebouncedSearchTerm] = useState('');
-  const [trendingMovies,setTrendingMovies]=useState([]);
 
   useDebounce(()=> setDebouncedSearchTerm(searchTerm), 500, [searchTerm])
 
@@ -75,7 +75,7 @@ const App = () => {
   const loadTrendingMovies = async() => {
     try{
       const movies = await getTrendingMovies();
-      console.log("TRENDING",movies)
+      //console.log("TRENDING",movies)
       setTrendingMovies(movies);
     }catch(error){
       console.error(`Error fetching trending movies: ${error}`);
